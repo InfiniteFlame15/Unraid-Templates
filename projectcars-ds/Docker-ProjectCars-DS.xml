@@ -91,11 +91,6 @@ Update Notice: Simply restart the container if a newer version of the game is av
       <Mode/>
     </Variable>
     <Variable>
-      <Value/>
-      <Name>GAME_PARAMS</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
       <Value>99</Value>
       <Name>UID</Name>
       <Mode/>
@@ -109,7 +104,6 @@ Update Notice: Simply restart the container if a newer version of the game is av
   <Labels/>
   <Config Name="GameServerFiles" Target="/home/steam/pcars_ds" Default="" Mode="rw" Description="Container Path: /home/steam/pcars_ds" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/projectcars</Config>
   <Config Name="STEAMAPPID" Target="STEAMAPPID" Default="" Mode="" Description="The STEAMAPPID that the container downloads at startup.&#13;&#10;If you want to install a static or beta version of the game change the value to: '332670 -beta YOURBRANCH' (without quotes, replace YOURBRANCH with the branch or version you want to install)." Type="Variable" Display="always" Required="true" Mask="false">332670</Config>
-  <Config Name="GAME_PARAMS" Target="GAME_PARAMS" Default="" Mode="" Description="Enter your extra start up commands for the server if needed." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="UDP - Host Port" Target="27015" Default="" Mode="udp" Description="UDP Game Server port (if you need another port, please delete this entry and create a new UDP Port with the required port number, also don't forget to change your server settings)" Type="Port" Display="always" Required="true" Mask="false">27015</Config>
   <Config Name="TCP - Query Port" Target="27016" Default="" Mode="tcp" Description="Port used to query game server" Type="Port" Display="always" Required="true" Mask="false">27016</Config>
   <Config Name="TCP - Steam Port" Target="8766" Default="" Mode="tcp" Description="Port used to communicate with Steam" Type="Port" Display="always" Required="false" Mask="false">8766</Config>
