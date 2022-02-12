@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ProjectCARS - DS</Name>
+  <Repository>infiniteflame/docker-projectcars-ds</Repository>
+  <Registry>https://hub.docker.com/r/infiniteflame/docker-projectcars-ds/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://developer.valvesoftware.com/wiki/SteamCMD</Project>
+  <Overview>This Docker will download and install SteamCMD. It will also install Project CARS and run it.&#xD;
+&#xD;
+Servername: 'Docker Project CARS - DS'&#xD;
+&#xD;
+ATTENTION: First Startup can take a while since it downloads the gameserver files!&#xD;
+&#xD;
+CONSOLE: To connect to the console open up a terminal and type in: 'docker exec -u steam -ti NAMEOFYOURCONTAINER screen -xS PZ' (without quotes), to disconnect from the console simply close the window.&#xD;
+&#xD;
+Update Notice: Simply restart the container if a newer version of the game is available.</Overview>
+  <Category>GameServers:</Category>
+  <WebUI/>
+  <TemplateURL>false</TemplateURL>
+  <Icon>https://www.projectcarsgame.com/two/wp-content/uploads/sites/4/2017/12/Project-CARS-2-Ident-SMALL.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText>If you like my work please </DonateText>
+  <DonateLink>https://www.paypal.me/russellovell</DonateLink>
+  <Description>This Docker will download and install SteamCMD. It will also install Project CARS and run it.&#xD;
+&#xD;
+Servername: 'Docker Project CARS - DS'&#xD;
+&#xD;
+ATTENTION: First Startup can take a while since it downloads the gameserver files!&#xD;
+&#xD;
+CONSOLE: To connect to the console open up a terminal and type in: 'docker exec -u terraria -ti NAMEOFYOURCONTAINER steam -xS PZ' (without quotes), to disconnect from the console simply close the window.&#xD;
+&#xD;
+Update Notice: Simply restart the container if a newer version of the game is available.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>27015</HostPort>
+        <ContainerPort>27015</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>27016</HostPort>
+        <ContainerPort>27016</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8766</HostPort>
+        <ContainerPort>8766</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>27015</HostPort>
+        <ContainerPort>27015</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>27016</HostPort>
+        <ContainerPort>27016</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8766</HostPort>
+        <ContainerPort>8766</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>9000</HostPort>
+        <ContainerPort>9000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/projectcars</HostDir>
+      <ContainerDir>/home/steam/pcars_ds</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>332670</Value>
+      <Name>STEAMAPPID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>GAME_PARAMS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>UID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>GID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="GameServerFiles" Target="/home/steam/pcars_ds" Default="" Mode="rw" Description="Container Path: /home/steam/pcars_ds" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/projectcars</Config>
+  <Config Name="STEAMAPPID" Target="STEAMAPPID" Default="" Mode="" Description="The STEAMAPPID that the container downloads at startup.&#13;&#10;If you want to install a static or beta version of the game change the value to: '332670 -beta YOURBRANCH' (without quotes, replace YOURBRANCH with the branch or version you want to install)." Type="Variable" Display="always" Required="true" Mask="false">332670</Config>
+  <Config Name="GAME_PARAMS" Target="GAME_PARAMS" Default="" Mode="" Description="Enter your extra start up commands for the server if needed." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="UDP - Host Port" Target="27015" Default="" Mode="udp" Description="UDP Game Server port (if you need another port, please delete this entry and create a new UDP Port with the required port number, also don't forget to change your server settings)" Type="Port" Display="always" Required="true" Mask="false">27015</Config>
+  <Config Name="TCP - Query Port" Target="27016" Default="" Mode="tcp" Description="Port used to query game server" Type="Port" Display="always" Required="true" Mask="false">27016</Config>
+  <Config Name="TCP - Steam Port" Target="8766" Default="" Mode="tcp" Description="Port used to communicate with Steam" Type="Port" Display="always" Required="false" Mask="false">8766</Config>
+  <Config Name="TCP - Host Port" Target="27015" Default="" Mode="tcp" Description="TCP Game Server port (if you need another port, please delete this entry and create a new UDP Port with the required port number, also don't forget to change your server settings)" Type="Port" Display="always" Required="true" Mask="false">27015</Config>
+  <Config Name="UDP - Query Port" Target="27016" Default="" Mode="udp" Description="Port used to query game server" Type="Port" Display="always" Required="true" Mask="false">27016</Config>
+  <Config Name="UDP - Steam Port" Target="8766" Default="" Mode="udp" Description="Port used to communicate with Steam" Type="Port" Display="always" Required="false" Mask="false">8766</Config>
+  <Config Name="HTTP API Port" Target="9000" Default="" Mode="tcp" Description="Port used to communicate with the game server HTTP API" Type="Port" Display="always" Required="false" Mask="false">9000</Config>
+  <Config Name="UID" Target="UID" Default="" Mode="" Description="Container Variable: UID" Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
+  <Config Name="GID" Target="GID" Default="" Mode="" Description="Container Variable: GID" Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
+</Container>
