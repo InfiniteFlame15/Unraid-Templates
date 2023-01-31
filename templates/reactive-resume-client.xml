@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>reactive-resume-client</Name>
+  <Overview>
+  Reactive Resume is a free and open source resume builder that’s built to make the mundane tasks of creating, updating and sharing your resume as easy as 1, 2, 3. With this app, you can create multiple resumes, share them with recruiters through a unique link and print as PDF, all for free, no advertisements, without losing the integrity and privacy of your data.
+  </Overview>
+  <Registry>https://hub.docker.com/r/amruthpillai/reactive-resume</Registry>
+  <Repository>amruthpillai/reactive-resume:client-latest</Repository>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Network>bridge</Network>
+  <WebUI>http://[IP]:[PORT:80]/<WebUI/>
+  <Icon>https://raw.githubusercontent.com/InfiniteFlame15/Unraid-Templates/main/templates/icons/reactive-resume.png</Icon>
+  <Category>Productivity:</Category>
+  <Project>https://rxresu.me/</Project>
+  <Config Type="Port" Name="Port" Target="3000" Default="3000" Mode="tcp" Description="" Display="always" Required="true">3000</Config>
+  <Config Type="Variable" Name="Public URL" Target="PUBLIC_URL" Default="http://localhost" Description="URL through which app is accessible" Display="advanced" Required="yes" Mask="false"></Config>
+  <Config Type="Variable" Name="Public Server URL" Target="PUBLIC_SERVER_URL" Default="http://localhost/api" Description="URL through which server is accessible" Display="advanced" Required="true" Mask="false"></Config>
+  <Config Type="Variable" Name="Public Google Client ID" Target="PUBLIC_GOOGLE_CLIENT_ID" Default="" Description="Google Client ID for Google Login This field is only required if the Google Login functionality is important to you." Display="advanced-hide" Required="false" Mask="false"></Config>
+</Container>
