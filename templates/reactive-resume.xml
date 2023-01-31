@@ -10,7 +10,7 @@
   <Support/>
   <Network>bridge</Network>
   <WebUI>http://[IP]:[PORT:80]/<WebUI/>
-  <Icon>https://www.projectcarsgame.com/two/wp-content/uploads/sites/4/2017/12/Project-CARS-2-Ident-SMALL.png</Icon>
+  <Icon>https://raw.githubusercontent.com/InfiniteFlame15/Unraid-Templates/main/templates/icons/reactive-resume.png</Icon>
   <Category>Productivity:</Category>
   <Project>https://rxresu.me/</Project>
   <Config Type="Port" Name="Port" Target="3100" Default="3100" Mode="tcp" Description="" Display="always" Required="true">3100</Config>
