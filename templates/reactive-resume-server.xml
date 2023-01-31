@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>reactive-resume</Name>
+  <Name>reactive-resume-server</Name>
   <Overview>
   Reactive Resume is a free and open source resume builder that’s built to make the mundane tasks of creating, updating and sharing your resume as easy as 1, 2, 3. With this app, you can create multiple resumes, share them with recruiters through a unique link and print as PDF, all for free, no advertisements, without losing the integrity and privacy of your data.
   </Overview>
   <Registry>https://hub.docker.com/r/amruthpillai/reactive-resume</Registry>
-  <Repository>amruthpillai/reactive-resume</Repository>
+  <Repository>amruthpillai/reactive-resume:server-latest</Repository>
   <Privileged>false</Privileged>
   <Support/>
   <Network>bridge</Network>
