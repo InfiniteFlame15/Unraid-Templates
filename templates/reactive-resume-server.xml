@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>reactive-resume-server</Name>
+  <Overview>
+  Reactive Resume is a free and open source resume builder that’s built to make the mundane tasks of creating, updating and sharing your resume as easy as 1, 2, 3. With this app, you can create multiple resumes, share them with recruiters through a unique link and print as PDF, all for free, no advertisements, without losing the integrity and privacy of your data.
+  </Overview>
+  <Registry>https://hub.docker.com/r/amruthpillai/reactive-resume</Registry>
+  <Repository>amruthpillai/reactive-resume:server-latest</Repository>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Network>bridge</Network>
+  <WebUI>http://[IP]:[PORT:80]/<WebUI/>
+  <Icon>https://raw.githubusercontent.com/InfiniteFlame15/Unraid-Templates/main/templates/icons/reactive-resume.png</Icon>
+  <Category>Productivity:</Category>
+  <Project>https://rxresu.me/</Project>
+  <Config Type="Port" Name="Port" Target="3100" Default="3100" Mode="tcp" Description="" Display="always" Required="true">3100</Config>
+  <Config Type="Variable" Name="Time Zone" Target="TZ" Default="UTC" Description="Server Timezone" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Type="Variable" Name="Secret Key" Target="SECRET_KEY" Default="" Description="Secret Key for Client-Server Communication" Display="always" Required="true" Mask="true"></Config>
+  <Config Type="Variable" Name="Public URL" Target="PUBLIC_URL" Default="http://localhost" Description="URL through which app is accessible" Display="advanced" Required="yes" Mask="false"></Config>
+  <Config Type="Variable" Name="Public Server URL" Target="PUBLIC_SERVER_URL" Default="http://localhost/api" Description="URL through which server is accessible" Display="advanced" Required="true" Mask="false"></Config>
+  <Config Type="Variable" Name="Postgres Host" Target="POSTGRES_HOST" Default="localhost" Description="Hostname for the PostgreSQL Server" Display="always" Required="true" Mask="false"></Config>
+  <Config Type="Variable" Name="Postgres Port" Target="POSTGRES_PORT" Default="5432" Description="Port of the PostgreSQL Server" Display="always" Required="true" Mask="false">5432</Config>
+  <Config Type="Variable" Name="Postgres DB" Target="POSTGRES_DB" Default="postgres" Description="Name of the Database in the PostgreSQL Server" Display="always" Required="true" Mask="false"></Config>
+  <Config Type="Variable" Name="Postgres User" Target="POSTGRES_USER" Default="postgres" Description="Username to use to connect to the PostgreSQL Server" Display="always" Required="true" Mask="false"></Config>
+  <Config Type="Variable" Name="Postgres Password" Target="POSTGRES_PASSWORD" Default="postgrea" Description="Password to use to connect to the PostgreSQL Server" Display="always" Required="true" Mask="true"></Config>
+  <Config Type="Variable" Name="Postgres SSL Cert" Target="POSTGRES_SSL_CERT" Default="" Description="Base64 Encoded String of the SSL CA Certificate" Display="advanced-hide" Required="false" Mask="false"></Config>
+  <Config Type="Variable" Name="JWT Secret" Target="JWT_SECRET" Default="" Description="Secret to Sign and Extract JWT Payloads" Display="always" Required="true" Mask="true"></Config>
+  <Config Type="Variable" Name="JWT Expiry Time" Target="JWT_EXPIRY_TIME" Default="604800" Description="This value, in milliseconds, denotes the validity of the JWT token. A shorter value would make the user have to login more frequently" Display="advanced" Required="true" Mask="false">604800</Config>
+  <Config Type="Variable" Name="Public Google Client ID" Target="PUBLIC_GOOGLE_CLIENT_ID" Default="" Description="Google Client ID for Google Login This field is only required if the Google Login functionality is important to you." Display="advanced-hide" Required="false" Mask="false"></Config>
+  <Config Type="Variable" Name="Google Client Secret" Target="GOOGLE_CLIENT_SECRET" Default="" Description="Google Client Secret for Google Login This field is only required if the Google Login functionality is important to you." Display="advanced-hide" Required="false" Mask="true"></Config>
+  <Config Type="Variable" Name="Google API Key" Target="GOOGLE_API_KEY" Default="" Description="Google API Key used for fetching Google Fonts You can get your own key here: https://developers.google.com/fonts/docs/developer_api" Display="advanced-hide" Required="false" Mask="true"></Config>
+  <Config Type="Variable" Name="Mail From Name" Target="MAIL_FROM_NAME" Default="" Description="Sender's Name" Display="advanced-hide" Required="false" Mask="false"></Config>
+  <Config Type="Variable" Name="Mail From Email" Target="MAIL_FROM_EMAIL" Default="" Description="Sender's Email Address" Display="advanced-hide" Required="false" Mask="false"></Config>
+  <Config Type="Variable" Name="Storage Bucket" Target="STORAGE_BUCKET" Default="" Description="You can either use S3 or any S3-compliant service such as DigitalOcean Spaces to store profile pictures uploaded by users of the platform." Display="always" Required="true" Mask="false"></Config>
+  <Config Type="Variable" Name="Storage Region" Target="STORAGE_REGION" Default="" Description="" Display="advanced" Required="true" Mask="false"></Config>
+  <Config Type="Variable" Name="Storage Endpoint" Target="STORAGE_ENDPOINT" Default="" Description="" Display="advanced" Required="true" Mask="false"></Config>
+  <Config Type="Variable" Name="Storage URL Prefix" Target="STORAGE_URL_PREFIX" Default="" Description="" Display="advanced" Required="true" Mask="false"></Config>
+  <Config Type="Variable" Name="Storage Access Key" Target="STORAGE_ACCESS_KEY" Default="" Description="" Display="advanced" Required="true" Mask="false"></Config>
+  <Config Type="Variable" Name="Storage Secret Key" Target="STORAGE_SECRET_KEY" Default="" Description="" Display="advanced" Required="true" Mask="true"></Config>
+  <Config Type="Variable" Name="PDF Deletion Time" Target="PDF_DELETION_TIME" Default="345600000" Description="Determines when the PDF should be deleted from the server in milliseconds Default is 4 days" Display="advanced-hide" Required="false" Mask="false"></Config>
+</Container>
